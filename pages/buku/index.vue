@@ -11,15 +11,16 @@
         <div class="my-3 text-muted">Menampilkan {{ books.length }} dari {{ jumlah }}</div>
         <div class="row">
           
-          <div v-for="(book,i) in books" :key="i" class="col-2">
-            <div class="card mb-2 ">
-              <div class="card-body">
-                <nuxt-link :to="`/buku/${book.id}`">
-                  <img :src="book.cover" alt="" width="170" height="230"> <h6>{{ book.judul }}</h6>
-                </nuxt-link>
-              </div>
+          <div v-for="(book,i) in books" :key="i" class="col-lg-2">
+          <div class="card mb-3">
+            <div class="card-body">
+              <nuxt-link :to="`/buku/${book.id}`">
+              <img :src="book.cover" alt="" width="170" height="230">
+              <h6>{{ book.judul }}</h6>
+              </nuxt-link>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
