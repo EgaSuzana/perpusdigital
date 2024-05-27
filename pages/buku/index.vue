@@ -11,16 +11,16 @@
         <div class="my-3 text-muted">Menampilkan {{ books.length }} dari {{ jumlah }}</div>
         <div class="row">
           
-          <div v-for="(book,i) in books" :key="i" class="col-lg-2">
-          <div class="card mb-3">
-            <div class="card-body">
-              <nuxt-link :to="`/buku/${book.id}`">
-              <img :src="book.cover" alt="" width="170" height="230">
-              <h6>{{ book.judul }}</h6>
-              </nuxt-link>
+          <div v-for="(book,i) in books" :key="i" class="col-lg-2 mb-5">
+            <div class="card mb-2 dcdc" >
+              <div class="card-header d-flex justify-content-center">
+                <nuxt-link :to="`/buku/${book.id}`">
+                  <img :src="book.cover" alt="" width="170" height="230" class="rounded-10 buku"> 
+                </nuxt-link>
+              </div>
+              <div class="card-body"><h6>{{ book.judul }}</h6></div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -40,11 +40,16 @@
 .input{
   background-color: #D9D9D9;
 }
-.card-body{
-  width: 400px;
+.card-header{
+  padding: 0%;
   object-fit: cover;
   object-position: 0 30;
 }
+.dcdc {
+  width: 220px;
+  height: 100%;
+}
+
 </style>
 <script setup>
 const supabase = useSupabaseClient()
